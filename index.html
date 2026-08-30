@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eaf6ff">
+  <meta name="description" content="MUBİ İlköğretim İngilizce Uygulamaları">
+  <title>MUBİ İngilizce Uygulamaları</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="page">
+    <div class="banner-wrap">
+      <div class="banner">
+        <img src="assets/mubi-banner.png" alt="MUBİ İlköğretim İngilizce Uygulamaları">
+      </div>
+    </div>
+
+    <section class="apps">
+      <div class="section-head">
+        <h1>Sınıfını seç</h1>
+        <p>İngilizce uygulamanı seç ve hemen kullanmaya başla.</p>
+      </div>
+
+      <div id="appGrid" class="grid">
+        <div class="loading">
+          <div class="spinner"></div>
+          Uygulamalar yükleniyor...
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="storeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalAppName">
+    <div class="modal-box">
+      <img id="modalAppIcon" class="modal-icon" src="" alt="">
+      <h2 id="modalAppName">MUBİ</h2>
+      <a id="appleStoreButton" class="store-button apple" href="#" target="_blank" rel="noopener noreferrer">App Store</a>
+      <a id="googleStoreButton" class="store-button google" href="#" target="_blank" rel="noopener noreferrer">Google Play</a>
+      <button id="closeModal" class="store-button close" type="button">Kapat</button>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

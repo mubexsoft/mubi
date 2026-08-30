@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1269ee">
+  <meta name="description" content="MUBİ uygulamasını indir">
+  <title>MUBİ Uygulamasını İndir</title>
+  <link rel="stylesheet" href="store.css">
+</head>
+
+<body>
+  <main id="appStage" class="app-stage" aria-live="polite">
+    <div id="loadingSpinner" class="loading-spinner" aria-label="Uygulama yükleniyor"></div>
+    <img id="appIcon" class="app-icon" src="" alt="">
+  </main>
+
+  <section id="sorryPage" class="sorry-page" aria-labelledby="sorryTitle">
+    <div class="sorry-symbol" aria-hidden="true">!</div>
+    <h1 id="sorryTitle">Üzgünüz</h1>
+    <p id="sorryMessage">Aradığınız uygulama bulunamadı veya indirme bağlantısı artık kullanılamıyor.</p>
+    <a class="home-button" href="./index.html">Uygulamalara Dön</a>
+  </section>
+
+  <div id="storeModal" class="store-modal" role="dialog" aria-modal="true" aria-labelledby="modalAppName" aria-describedby="modalDescription">
+    <div class="store-box">
+      <img id="modalAppIcon" class="modal-icon" src="" alt="">
+      <h1 id="modalAppName">MUBİ</h1>
+      <p id="modalDescription">Uygulamayı indirmek istediğiniz mağazayı seçin.</p>
+
+      <a id="appleStoreButton" class="store-button apple-button" href="#" target="_blank" rel="noopener noreferrer">App Store</a>
+      <a id="googleStoreButton" class="store-button google-button" href="#" target="_blank" rel="noopener noreferrer">Google Play</a>
+      <button id="closeModalButton" class="store-button close-button" type="button">Kapat</button>
+    </div>
+  </div>
+
+  <script src="store.js" defer></script>
+</body>
+</html>

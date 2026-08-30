@@ -1,0 +1,154 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;min-height:100%}
+html{background:#1269ee}
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:max(24px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom));
+  overflow:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:#fff;
+  background:
+    radial-gradient(circle at 50% 42%,rgba(111,198,255,.55),transparent 35%),
+    radial-gradient(circle at 12% 10%,rgba(255,255,255,.20),transparent 28%),
+    linear-gradient(145deg,#1596f5 0%,#1269ee 52%,#0b55c7 100%);
+  -webkit-font-smoothing:antialiased;
+}
+button,a{font:inherit;-webkit-tap-highlight-color:transparent}
+img{display:block;user-select:none;-webkit-user-select:none;-webkit-user-drag:none}
+
+.app-stage{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;width:100%}
+.app-icon{
+  width:clamp(132px,28vw,210px);
+  height:clamp(132px,28vw,210px);
+  object-fit:cover;
+  border-radius:24%;
+  opacity:0;
+  transform:translateY(8px) scale(.94);
+  box-shadow:0 34px 75px rgba(0,0,0,.30),0 12px 28px rgba(0,0,0,.20);
+  transition:opacity .35s ease,transform .35s ease;
+  -webkit-mask-image:-webkit-radial-gradient(white,black);
+}
+.app-icon.visible{opacity:1;transform:translateY(0) scale(1)}
+
+.loading-spinner{
+  position:absolute;
+  width:42px;
+  height:42px;
+  border:4px solid rgba(255,255,255,.20);
+  border-top-color:#fff;
+  border-radius:50%;
+  animation:loadingSpin .85s linear infinite;
+}
+.loading-spinner.hidden{display:none}
+@keyframes loadingSpin{to{transform:rotate(360deg)}}
+
+.store-modal{
+  position:fixed;
+  z-index:999;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:max(20px,env(safe-area-inset-top)) 20px max(20px,env(safe-area-inset-bottom));
+  background:rgba(7,20,38,.78);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.store-modal.active{display:flex}
+
+.store-box{
+  width:100%;
+  max-width:390px;
+  padding:29px;
+  border-radius:31px;
+  background:#fff;
+  box-shadow:0 38px 100px rgba(0,0,0,.32);
+  animation:modalOpen .28s ease both;
+}
+@keyframes modalOpen{
+  from{opacity:0;transform:translateY(12px) scale(.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+.modal-icon{
+  width:85px;
+  height:85px;
+  margin:0 auto 19px;
+  border-radius:22%;
+  object-fit:cover;
+  box-shadow:0 14px 28px rgba(16,24,40,.15);
+  -webkit-mask-image:-webkit-radial-gradient(white,black);
+}
+.store-box h1{color:#101828;font-size:23px;line-height:1.35;text-align:center}
+.store-box p{margin-top:8px;color:#667085;font-size:15px;line-height:1.5;text-align:center}
+
+.store-button{
+  display:block;
+  width:100%;
+  margin-top:12px;
+  padding:16px;
+  border:none;
+  border-radius:17px;
+  font-size:16px;
+  font-weight:700;
+  text-align:center;
+  text-decoration:none;
+  cursor:pointer;
+}
+.apple-button{margin-top:25px;background:#090909;color:#fff}
+.google-button{background:#edf4ff;color:#245bbc}
+.close-button{background:transparent;color:#667085}
+
+.sorry-page{
+  display:none;
+  width:100%;
+  max-width:520px;
+  padding:40px 30px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:30px;
+  background:rgba(255,255,255,.10);
+  box-shadow:0 30px 80px rgba(0,0,0,.20);
+  text-align:center;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.sorry-page.active{display:block}
+.sorry-symbol{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:76px;
+  height:76px;
+  margin:0 auto 22px;
+  border-radius:24px;
+  background:rgba(255,255,255,.14);
+  font-size:38px;
+}
+.sorry-page h1{font-size:clamp(30px,8vw,42px);line-height:1.1;letter-spacing:-1.3px}
+.sorry-page p{margin-top:14px;color:rgba(255,255,255,.80);font-size:16px;line-height:1.6}
+.home-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:170px;
+  margin-top:27px;
+  padding:15px 22px;
+  border-radius:16px;
+  background:#fff;
+  color:#0b4fb6;
+  font-weight:750;
+  text-decoration:none;
+}
+
+@media(max-width:420px){
+  .store-box{padding:25px}
+  .sorry-page{padding:34px 22px;border-radius:25px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .loading-spinner{animation-duration:1.6s}
+  .app-icon,.store-box{transition:none;animation:none}
+}

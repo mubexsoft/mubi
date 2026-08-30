@@ -1,0 +1,81 @@
+:root{
+  --blue:#1269ee;
+  --blue-dark:#0b4fb6;
+  --text:#10213f;
+  --muted:#6c7890;
+  --bg:#f7fbff;
+  --card:#ffffff;
+  --line:#e7eef7;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#eef9ff 0,#f8fbff 300px,#f7f9fc 100%);color:var(--text);-webkit-font-smoothing:antialiased}
+img{display:block}
+button,a{font:inherit;-webkit-tap-highlight-color:transparent}
+
+.page{width:100%}
+
+.banner-wrap{width:100%;padding:18px 18px 0}
+.banner{width:min(1440px,100%);margin:0 auto;overflow:hidden;border-radius:28px;background:#dff3ff;box-shadow:0 14px 45px rgba(38,94,151,.13)}
+.banner img{width:100%;height:auto;object-fit:contain}
+
+.apps{width:min(1050px,100%);margin:0 auto;padding:52px 18px max(70px,env(safe-area-inset-bottom))}
+.section-head{text-align:center;margin-bottom:30px}
+.section-head h1{font-size:clamp(28px,4.3vw,42px);line-height:1.1;letter-spacing:-1.4px;font-weight:850}
+.section-head p{margin-top:10px;color:var(--muted);font-size:15px;line-height:1.5}
+
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+
+.app-card{appearance:none;border:1px solid var(--line);background:var(--card);border-radius:24px;min-width:0;min-height:235px;padding:24px 14px 19px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;cursor:pointer;text-align:center;color:inherit;box-shadow:0 8px 25px rgba(24,55,91,.06);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.app-card:hover,.app-card:focus-visible{transform:translateY(-4px);border-color:#cfe0fa;box-shadow:0 16px 36px rgba(24,55,91,.12);outline:none}
+
+.app-icon{width:112px;height:112px;max-width:78%;object-fit:cover;border-radius:25%;box-shadow:0 11px 24px rgba(18,50,90,.17);-webkit-mask-image:-webkit-radial-gradient(white,black)}
+.app-name{margin-top:18px;font-size:17px;line-height:1.32;font-weight:780}
+.app-link{margin-top:auto;padding-top:15px;color:var(--blue);font-size:13px;font-weight:750}
+
+.loading,.error,.empty{grid-column:1/-1;min-height:220px;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--muted)}
+.loading,.empty{background:rgba(255,255,255,.6);border:1px solid var(--line)}
+.error{background:#fff2f2;color:#c83d3d;border:1px solid #ffdede}
+
+.spinner{width:34px;height:34px;margin-bottom:15px;border:4px solid rgba(18,105,238,.14);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.retry{margin-top:14px;border:0;border-radius:12px;background:var(--blue);color:#fff;padding:11px 16px;font-weight:750;cursor:pointer}
+
+.modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px 20px max(20px,env(safe-area-inset-bottom));background:rgba(8,20,39,.80);backdrop-filter:blur(4px)}
+.modal.active{display:flex}
+
+.modal-box{width:min(380px,100%);padding:27px;border-radius:28px;background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.28)}
+.modal-icon{width:84px;height:84px;margin:0 auto 17px;object-fit:cover;border-radius:24%;box-shadow:0 10px 24px rgba(20,48,81,.16)}
+.modal h2{text-align:center;font-size:21px;line-height:1.35}
+
+.store-button{display:block;width:100%;border:0;border-radius:15px;padding:15px;margin-top:11px;text-align:center;text-decoration:none;font-size:15px;font-weight:750;cursor:pointer}
+.apple{margin-top:23px;background:#090909;color:#fff}
+.google{background:#eaf3ff;color:#1858b7}
+.close{background:transparent;color:#6f788b}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+@media(max-width:600px){
+  body{background:linear-gradient(180deg,#eef9ff 0,#f8fbff 170px,#f7f9fc 100%)}
+  .banner-wrap{padding:0}
+  .banner{width:100%;border-radius:0;box-shadow:none}
+  .apps{padding:34px 12px max(58px,env(safe-area-inset-bottom))}
+  .section-head{margin-bottom:22px}
+  .section-head p{font-size:14px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+  .app-card{min-height:190px;padding:17px 8px 15px;border-radius:20px}
+  .app-icon{width:92px;height:92px}
+  .app-name{margin-top:13px;font-size:14px}
+  .app-link{padding-top:12px;font-size:12px}
+}
+
+@media(max-width:360px){
+  .grid{gap:8px}
+  .app-card{min-height:178px}
+  .app-icon{width:82px;height:82px}
+  .app-name{font-size:13px}
+}
