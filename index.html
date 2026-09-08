@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <!-- Primary SEO -->
   <title>MUBİ | Ücretsiz İlköğretim İngilizce Uygulamaları</title>
 
   <meta
@@ -57,7 +55,7 @@
     content="MUBİ İlköğretim İngilizce Uygulamaları"
   >
 
-  <!-- X / Twitter -->
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
 
   <meta
@@ -75,7 +73,7 @@
     content="https://mubiapp.vercel.app/assets/mubi-banner.png"
   >
 
-  <!-- Structured Data / Schema.org -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -88,7 +86,6 @@
   }
   </script>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -123,18 +120,30 @@
       </div>
 
       <div id="appGrid" class="grid">
-
         <div class="loading">
           <div class="spinner"></div>
           Uygulamalar yükleniyor...
         </div>
-
       </div>
 
     </section>
 
   </main>
 
+  <!-- Ziyaretçi Sayacı -->
+  <footer
+    style="
+      text-align:center;
+      padding:20px 10px 30px;
+      font-size:13px;
+      color:#8a8a8a;
+    "
+  >
+    Toplam ziyaretçi:
+    <strong id="visitorCount">...</strong>
+  </footer>
+
+  <!-- Store Modal -->
   <div
     id="storeModal"
     class="modal"
@@ -188,8 +197,30 @@
 
   </div>
 
-  <!-- JavaScript -->
+  <!-- Uygulama JS -->
   <script src="app.js" defer></script>
+
+  <!-- Ziyaretçi Sayacı -->
+  <script>
+    function updateVisitorCount(response) {
+      const counter = document.getElementById("visitorCount");
+
+      if (response && typeof response.value !== "undefined") {
+        const value = Number(response.value);
+
+        counter.textContent = Number.isNaN(value)
+          ? response.value
+          : value.toLocaleString("tr-TR");
+      } else {
+        counter.textContent = "-";
+      }
+    }
+  </script>
+
+  <script
+    async
+    src="https://counterapi.com/api/mubiapp.vercel.app/view/homepage?unique=true&callback=updateVisitorCount">
+  </script>
 
 </body>
 </html>
