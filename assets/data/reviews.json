@@ -1,0 +1,53 @@
+{
+  "selection": "Manually selected from user-provided store screenshots. Dates without a year are preserved as shown.",
+  "reviews": [
+    {
+      "name": "Nur Batumoğlu",
+      "platform": "android",
+      "date": "30 Eylül 2026",
+      "title": "",
+      "text": "okul müfredatıyla uyumlu ikinci sınıfa giden oğlum ilk konuyu eğlenerek öğrendi güzel bir uygulama emeğinize sağlık",
+      "rating": 5
+    },
+    {
+      "name": "Hikmet Subasi",
+      "platform": "android",
+      "date": "26 Eylül 2026",
+      "title": "",
+      "text": "İngilizce öğretmenimizin tavsiyesi üzerine oğlum için kurdum,çok yardımcı oldu bize. Yapanların eline sağlık",
+      "rating": 5
+    },
+    {
+      "name": "Songül Polatlı",
+      "platform": "android",
+      "date": "21 Ekim 2026",
+      "title": "",
+      "text": "Yeni başlayanlardanım şimdilik iyi gidiyor",
+      "rating": 5
+    },
+    {
+      "name": "tces16",
+      "platform": "ios",
+      "date": "12 Eylül",
+      "title": "Öğretici ve faydalı",
+      "text": "Kardeşim için yüklemiştik gerçekten faydalı bir uygulama emeğinize sağlık",
+      "rating": 5
+    },
+    {
+      "name": "sdföz",
+      "platform": "ios",
+      "date": "12 Eylül",
+      "title": "teşekkür",
+      "text": "Ablamın oğlu için indirdim, hem tasarım hem ses özelliğini çok beğendi, okulda derler başlamadan öğrenmeye başladı bile, teşekkürler",
+      "rating": 5
+    },
+    {
+      "name": "Lorin",
+      "platform": "ios",
+      "date": "2 Ekim",
+      "title": "Bayıldım",
+      "text": "Ben aşık oldum çok güzel ben sıfır İngilizce’yle ilk günden çok güzel şeyler öğrendim ve çok eğlenceli 12 yaşında bu kadar bilgi öğrenmek gerçekten de bir ayrı güzel ben bayıldım bana çok yardımcı oldu artık ikinci uygulamam oldu birinci Duolingoydu ikinci de bu oldu ben çok beğendim",
+      "rating": 5
+    }
+  ]
+}
